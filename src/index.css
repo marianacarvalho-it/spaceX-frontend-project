@@ -1,0 +1,15 @@
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-image: url('./assets/backgroundimage3.jpg');
+  background-size: 100% 100%; /* Adjust to your preference */
+  background-repeat: no-repeat; /* Adjust to your preference */
+  background-attachment: fixed; /* Optional: Fixed background */
+  background-position: center; /* Adjust to your preference */
+}
+
+

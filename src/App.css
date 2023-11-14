@@ -1,0 +1,48 @@
+.navBarTool {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 98%;
+  background-color: orange; /* Set your preferred background color */
+  padding: 10px 20px; /* Adjust the padding as needed */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000; /* Set a high z-index to ensure it's above other elements */
+}
+
+.navBarImage {
+  width: 25px;
+  height: 25px; /* Adjust the height as needed */
+}
+
+.navBarTool a {
+  text-decoration: none;
+  color: white; /* Set your preferred text color */
+  margin: 0 10px; /* Adjust the margin between items as needed */
+}
+
+.navBarTool a:hover {
+  text-decoration: underline; /* Add an underline on hover if desired */
+}
+
+.home-page-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* This ensures the content is centered vertically */
+  color: white; /* Set your desired text color */
+}
+
+.home-page-screen h1 {
+  font-size: 2.5em; /* Adjust the font size as needed */
+}
+
+.home-page-screen h2 {
+  font-size: 1.5em; /* Adjust the font size as needed */
+}
+
+.comment-item {
+  color: white;
+}
