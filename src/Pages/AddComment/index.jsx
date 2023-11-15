@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+
 function AddComment({launchId}) {
+
   const [comments, setComments] = useState([]);
   const [comment, setComment] = useState("");
   const [author, setAuthor] = useState("");
   const [editCommentId, setEditCommentId] = useState(null);
+
   useEffect(() => {
     axios.get("http://localhost:5005/comments")
       .then(response => {
@@ -12,6 +15,7 @@ function AddComment({launchId}) {
       })
       .catch(error => console.error("Error fetching comments:", error));
   }, []);
+
   async function handleSubmit(e) {
     e.preventDefault();
     try {
@@ -40,17 +44,20 @@ function AddComment({launchId}) {
       console.error("Error adding/updating comment: ", error);
     }
   }
+
   const handleEdit = (commentId) => {
     setEditCommentId(commentId);
     const commentToEdit = comments.find((c) => c.id === commentId);
     setAuthor(commentToEdit.author);
     setComment(commentToEdit.description);
   };
+
   const handleCancelEdit = () => {
     setComment("");
     setAuthor("");
     setEditCommentId(null);
   };
+
   const handleDelete = async (commentId) => {
     try {
       await axios.delete(`http://localhost:5005/comments/${commentId}`);
@@ -59,6 +66,7 @@ function AddComment({launchId}) {
       console.error("Error deleting comment:", error);
     }
   };
+  
   return (
     <div>
       <form onSubmit={handleSubmit}>

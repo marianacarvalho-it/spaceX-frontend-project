@@ -1,13 +1,10 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const API_URL = "https://api.spacexdata.com/v4"
 
-
-
 function CrewList (){
-
     const [crews, setCrew] = useState([]);
 
     useEffect(()=>{
@@ -20,7 +17,7 @@ function CrewList (){
 
     return(
         <div className='crew-list-screen'>
-          <div className='crew-images-grid'>
+            <div className='crew-images-grid'>
             {crews.map((crew)=>{
                 return(
                     <div key={crew.id} className='crew-square-div'>
@@ -31,10 +28,8 @@ function CrewList (){
                     </div>
                 )
             })}
-          </div>
+            </div>
         </div>
-      )
-
+    )
 }
-
 export default CrewList;

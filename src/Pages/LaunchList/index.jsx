@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
@@ -10,14 +10,12 @@ function LaunchList() {
 
   const [launches, setLaunches] = useState([]);
 
-
   useEffect(()=>{
     axios.get(`${API_URL}/launches`).then((response)=>{
         setLaunches(response.data);
     })
     .catch((error)=> console.log(error))
   }, [])
-
 
   return(
     <div className='launchListScreen'>
@@ -37,5 +35,5 @@ function LaunchList() {
       </div>
     </div>
   )
- }
+}
 export default LaunchList;
