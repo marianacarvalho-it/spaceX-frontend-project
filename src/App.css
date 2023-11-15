@@ -73,7 +73,7 @@ justify-content: center;
 
 .right-page {
 
-  background: url("src/assets/launch.jpg");
+  background: url("../src/assets/launch.jpg");
   width: 50%;
   background-size: cover;
 }
