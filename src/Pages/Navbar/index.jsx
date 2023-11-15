@@ -6,7 +6,7 @@ function NavBar(){
     return(
         <div className="navBarTool">
             <Link to="/">
-            <img src="/logo3.png" className='navBarImage'></img>
+            <img src="src/assets/logo3.png" className='navBarImage'></img>
             </Link>
             
             <Link to="/launches">
