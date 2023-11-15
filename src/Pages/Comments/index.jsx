@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-function Comments() {
+function Comments({launchId}) {
+
   const [comments, setComments] = useState([]);
   const [comment, setComment] = useState("");
   const [author, setAuthor] = useState("");
   const [editCommentId, setEditCommentId] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:5005/comments")
+    axios.get("https://spacex-backend-project.onrender.com/comments")
       .then(response => {
         setComments(response.data);
       })
@@ -20,7 +21,7 @@ function Comments() {
     try {
       if (editCommentId) {
         // If editing, perform an update
-        await axios.put(`http://localhost:5005/comments/${editCommentId}`, {
+        await axios.put(`https://spacex-backend-project.onrender.com/comments/${editCommentId}`, {
           author: author,
           description: comment,
         });
@@ -28,16 +29,18 @@ function Comments() {
       } 
       else {
         // If not editing, perform an add
-        const response = await axios.post("http://localhost:5005/comments", {
+        const response = await axios.post("https://spacex-backend-project.onrender.com/comments", {
           author: author,
           description: comment,
+          rocketId: launchId,
         });
         setComments([...comments, response.data]);
       }
       setComment("");
       setAuthor("");
+
       // Fetch the updated comments after a successful edit
-      const updatedComments = await axios.get("http://localhost:5005/comments");
+      const updatedComments = await axios.get("https://spacex-backend-project.onrender.com/comments");
       setComments(updatedComments.data);
       } catch (error) {
       console.error("Error adding/updating comment: ", error);
@@ -59,7 +62,7 @@ function Comments() {
 
   const handleDelete = async (commentId) => {
     try {
-      await axios.delete(`http://localhost:5005/comments/${commentId}`);
+      await axios.delete(`https://spacex-backend-project.onrender.com/comments/${commentId}`);
       setComments((prevComments) => prevComments.filter((c) => c.id !== commentId));
     } catch (error) {
       console.error("Error deleting comment:", error);
@@ -67,9 +70,9 @@ function Comments() {
   };
 
   return (
-    <div>
+    <div className="comment-container"> 
       <form onSubmit={handleSubmit}>
-        <label>
+        <label className="comment-author">
           Author:
           <input
             type="text"
@@ -78,7 +81,7 @@ function Comments() {
             onChange={(e) => setAuthor(e.target.value)}
           />
         </label>
-        <label>
+        <label className="comment-description">
           Comment:
           <input
             type="text"
@@ -87,21 +90,24 @@ function Comments() {
             onChange={(e) => setComment(e.target.value)}
           />
         </label>
-        <button type="submit">{editCommentId ? "Update" : "Submit"}</button>
+        {/* botão */}
+        <button type="submit">{editCommentId ? "Update" : "Submit"}
+        </button>
         {editCommentId && (
-          <button type="button" onClick={handleCancelEdit}>
+        <button type="button" onClick={handleCancelEdit}>
             Cancel Edit
-          </button>
+        </button>
         )}
       </form>
+      {/* registro dos comentários */}
       <div>
-        <h2>Comments:</h2>
+        <h2>Comments: </h2>
         <ul>
-          {comments.map((c) => (
+          {comments.filter(comment => comment.rockeId === launchId).map((c) => (
             <li key={c.id} className="comment-item">
-              <strong>Author: {c.author}:</strong> Description: {c.description}
-              <button onClick={() => handleEdit(c.id)}>Edit</button>
-              <button onClick={() => handleDelete(c.id)}>Delete</button>
+              <strong>Author: {c.author}</strong> Description: {c.description}
+              <button onClick={() => handleEdit(c.id)}>Edit </button>
+              <button onClick={() => handleDelete(c.id)}>Delete </button>
             </li>
           ))}
         </ul>

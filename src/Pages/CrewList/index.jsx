@@ -19,14 +19,14 @@ function CrewList (){
     }, [])
 
     return(
-        <div className='crewListScreen'>
-          <div className='crewImagesGrid'>
+        <div className='crew-list-screen'>
+          <div className='crew-images-grid'>
             {crews.map((crew)=>{
                 return(
                     <div key={crew.id} className='crew-square-div'>
                         <h2>{crew.name}</h2>
                         <Link to={`/crew/${crew.id}`}>
-                        <img src={crew.image} className='listImages'/>
+                        <img src={crew.image} className='crew-list-images'/>
                         </Link>
                     </div>
                 )

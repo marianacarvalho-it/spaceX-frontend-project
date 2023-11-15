@@ -1,4 +1,4 @@
-/* import { useState } from 'react'; */
+import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import HomePage from './Pages/HomePage';
@@ -8,11 +8,11 @@ import RocketDetails from './Pages/RocketDetails';
 
 import LaunchDetails from './Pages/LaunchDetails';
 import NavBar from './Pages/Navbar';
-/* import SattelitesLaunchList from './Pages/LaunchList';
-import CapsulesLaunchList from './Pages/RocketsList'; */
+import SattelitesLaunchList from './Pages/LaunchList';
+import CapsulesLaunchList from './Pages/RocketsList';
 import CrewList from './Pages/CrewList';
 import CrewDetails from './Pages/CrewDetails';
-/* import Login from './Pages/Login/Index'; */
+
 
 function App() {
   
@@ -30,7 +30,7 @@ function App() {
 
         <Route path="/crew" element={<CrewList/>}/>
         <Route path="/crew/:crewId" element={<CrewDetails/>}/>
-        {/* <Route path="/login" element={<Login/>}/> */}
+        
         
       </Routes>
         

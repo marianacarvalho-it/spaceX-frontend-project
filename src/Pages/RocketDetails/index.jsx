@@ -37,13 +37,6 @@ function RocketDetails(){
             <p>{rocketDetails.description}</p>
 
             <a href={rocketDetails.wikipedia} target="_Blank">Wiki Link</a>
-
-
-                <div className="comment-button">
-                  <button type="submit">Comment</button>
-                  </div>        
-                   
-            
             </div>
         </div>
 

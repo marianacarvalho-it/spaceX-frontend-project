@@ -20,15 +20,15 @@ function RocketsLaunchList() {
 
 
   return(
-    <div className='launchListScreen'>
-      <div className='listImagesGrid'>
+    <div className='rocket-list-screen'>
+      <div className='rocket-list-image-grid'>
         {rockets.map((rocket)=>{
             return(
-                <div key={rocket.id} className='square-div'>
-                    <h2>{rocket.name}</h2>
+                <div key={rocket.id} className='rocket-square-div'>
                     <Link to={`/rockets/${rocket.id}`}>
-                    <img src={rocket.flickr_images || defaultImage} className='listImages'/>
+                    <img src={rocket.flickr_images || defaultImage} className='rocket-list-images'/>
                     </Link>
+                    <h2>{rocket.name}</h2>
                 </div>
             )
         })}
