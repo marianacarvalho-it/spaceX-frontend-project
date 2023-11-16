@@ -5,8 +5,8 @@ import React from 'react';
 function NavBar() {
     return (
         <div className="navBar">
-            <Link to="/" className="navBarItem">
-                <img src="/src/assets/logo3.png" alt="SpaceX Logo" className='navBarImage' />
+            <Link to="src/assets/logo3.png" className="navBarItem">
+                <img src="" alt="SpaceX Logo" className='navBarImage' />
             </Link>
             <Link to="/launches" className="navBarItem">
                 <span>LAUNCHES</span>
