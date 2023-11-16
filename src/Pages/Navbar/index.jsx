@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
+import logo from "../../assets/logo3.png"
 
 
 function NavBar() {
     return (
         <div className="navBar">
             <Link to="/" className="navBarItem">
-                <img src="src/assets/logo3.png" alt="SpaceX Logo" className='navBarImage' />
+                <img src={logo} alt="SpaceX Logo" className='navBarImage' />
             </Link>
             <Link to="/launches" className="navBarItem">
                 <span>LAUNCHES</span>
