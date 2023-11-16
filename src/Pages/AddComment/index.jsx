@@ -1,13 +1,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-
 function AddComment({launchId}) {
-
   const [comments, setComments] = useState([]);
   const [comment, setComment] = useState("");
   const [author, setAuthor] = useState("");
   const [editCommentId, setEditCommentId] = useState(null);
-
   useEffect(() => {
     axios.get("http://localhost:5005/comments")
       .then(response => {
@@ -15,7 +12,6 @@ function AddComment({launchId}) {
       })
       .catch(error => console.error("Error fetching comments:", error));
   }, []);
-
   async function handleSubmit(e) {
     e.preventDefault();
     try {
@@ -44,20 +40,17 @@ function AddComment({launchId}) {
       console.error("Error adding/updating comment: ", error);
     }
   }
-
   const handleEdit = (commentId) => {
     setEditCommentId(commentId);
     const commentToEdit = comments.find((c) => c.id === commentId);
     setAuthor(commentToEdit.author);
     setComment(commentToEdit.description);
   };
-
   const handleCancelEdit = () => {
     setComment("");
     setAuthor("");
     setEditCommentId(null);
   };
-
   const handleDelete = async (commentId) => {
     try {
       await axios.delete(`http://localhost:5005/comments/${commentId}`);
@@ -66,43 +59,54 @@ function AddComment({launchId}) {
       console.error("Error deleting comment:", error);
     }
   };
-  
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Author:
-          <input
-            type="text"
-            name="author"
-            value={author}
-            onChange={(e) => setAuthor(e.target.value)}
-          />
-        </label>
-        <label>
-          Comment:
-          <input
-            type="text"
-            name="comment"
-            value={comment}
-            onChange={(e) => setComment(e.target.value)}
-          />
-        </label>
-        <button type="submit">{editCommentId ? "Update" : "Submit"}</button>
+    <div className="add-comment">
+      <form className="add-comment__form" onSubmit={handleSubmit}>
+        <div className="add-comment__field">
+          <label className="add-comment__label">
+            Author:
+            <input
+              type="text"
+              name="author"
+              className="add-comment__input"
+              value={author}
+              onChange={(e) => setAuthor(e.target.value)}
+            />
+          </label>
+        </div>
+        <div className="add-comment__field">
+          <label className="add-comment__label">
+            Comment:
+            <input
+              type="text"
+              name="comment"
+              className="add-comment__input"
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+            />
+          </label>
+        </div>
+        <button className="add-comment__submit-btn" type="submit">
+          {editCommentId ? "Update" : "Submit"}
+        </button>
         {editCommentId && (
-          <button type="button" onClick={handleCancelEdit}>
+          <button
+            className="add-comment__cancel-btn"
+            type="button"
+            onClick={handleCancelEdit}
+          >
             Cancel Edit
           </button>
         )}
       </form>
-      <div>
-        <h2 className="launch-details-comments">Comments:</h2>
-        <ul>
+      <div className="add-comment__comments-section">
+        <h2 className="add-comment__comments-title">Comments:</h2>
+        <ul className="add-comment__comments-list">
           {comments.filter(comment => comment.rocketId === launchId).map((c) => (
-            <li key={c.id} className="comment-item">
+            <li key={c.id} className="add-comment__comment-item">
               <strong>Author: {c.author}:</strong> Description: {c.description}
-              <button onClick={() => handleEdit(c.id)}>Edit</button>
-              <button onClick={() => handleDelete(c.id)}>Delete</button>
+              <button className="add-comment__edit-btn" onClick={() => handleEdit(c.id)}>Edit</button>
+              <button className="add-comment__delete-btn" onClick={() => handleDelete(c.id)}>Delete</button>
             </li>
           ))}
         </ul>
@@ -110,4 +114,5 @@ function AddComment({launchId}) {
     </div>
   );
 }
+
 export default AddComment;

@@ -1,273 +1,597 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+:root {
+    background-color: #1C2331;
+}
 
-
-
-.navBarTool {
-  background-color: #000000;
-  color: #fff;
-  padding: 0px;
+/* home page */
+.home-page-screen {
+    background-image: url('src/assets/shot-by-cerqueira-KRqiZC9iFt8-unsplash.jpg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* This ensures the content is centered vertically */
+    color: white; /* Set your desired text color */
+  }
+  .home-page-screen h1 {
+    font-size: 100px; /* Adjust the font size as needed */
+    padding: 50px;
+    text-shadow: 0px 0px 28px rgb(255, 255, 255);
+  }
+  .second-homepage h2 {
+    font-size: 40px; /* Adjust the font size as needed */
+  }
+  .second-homepage {
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    padding-bottom: 50px;
+    color: white;
+  }
+  .left-page {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  padding-left: 50px;
+  padding-right: 50px;
   align-items: center;
-  width: 100%;
+  justify-content: center;
+  }
+  .right-page {
+    background: url("src/assets/launch.jpg");
+    width: 50%;
+    background-size: cover;
+  }
+  .left-page h3 {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  .left-page h2 {
+    border-bottom: 5px solid rgb(255, 255, 255);
+  }
+  
+
+
+.navBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #000000; /* Dark navy blue background */
+    
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+
+    
+    
+
+}
+
+.navBarItem {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navBarItem span {
+    margin-left: 8px;
+}
+
+.navBarItem:hover {
+    color: #4BA3C3; /* Bright blue for hover effect */
 }
 
 .navBarImage {
-  width: 120px;
-  height: 80px;
+    height: 50px; /* Adjust as necessary */
+    width: 100px;
 }
 
-h4 {
-  margin: 0;
-  padding: 10px;
-  cursor: pointer;
-  color: #fff;
-  text-decoration: none;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navBar {
+        flex-direction: column;
+        padding: 10px;
+    }
 
-h4:hover {
-  background-color: #127dd4;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+    .navBarItem {
+        margin-bottom: 10px;
+    }
 }
+/* ________________________________________________ */
 
-.home-page-screen {
-  background-image: url("../src/assets/shot-by-cerqueira-KRqiZC9iFt8-unsplash.jpg");
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh; /* This ensures the content is centered vertically */
-  color: white; /* Set your desired text color */
-}
-
-.home-page-screen h1 {
-  font-size: 100px; /* Adjust the font size as needed */
-  padding: 50px;
-  text-shadow: 0px 0px 28px rgba(0,0,0,1);
-}
-
-.second-homepage h2 {
-  font-size: 40px; /* Adjust the font size as needed */
+/* Base Styles */
+.launch-list {
+    background-color: #1C2331;
+    color: #c5c6c7; /* Light grey text */
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    
 
 }
 
-.second-homepage {
-  height: 300px;
-  display: flex;
-  flex-direction: row;
-  height: 300px;
-
-  padding-bottom: 50px;
+/* Grid Layout for Launch Items */
+.launch-list__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Reduced max size */
+    gap: 20px; /* Space between items */
 }
 
-.left-page {
-
-display: flex;
-flex-direction: column;
-padding-left: 50px;
-padding-right: 50px;
-align-items: center;
-justify-content: center;
+/* Individual Launch Item Styles */
+.launch-list__item {
+    background-color: #1f2833; /* Dark grey for contrast */
+    border-radius: 10px; /* Rounded corners for a sleek look */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Subtle shadow */
+    transition: transform 0.3s ease-in-out; /* Smooth scaling on hover */
 }
 
-.right-page {
-
-  background: url("../src/assets/launch.jpg");
-  width: 50%;
-  background-size: cover;
+.launch-list__item:hover {
+    transform: scale(1.05); /* Slight enlargement on hover */
 }
 
-.left-page h3 {
-  
-  margin-left: 100px;
-  margin-right: 100px;
+/* Launch Image Styles */
+.launch-list__image {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #0b0c10; /* Border to separate image from details */
 }
 
-.left-page h2 {
-  border-bottom: 5px solid black;
+/* Launch Details Styles */
+.launch-list__details {
+    padding: 15px;
+    text-align: center; /* Centering the text for clarity */
 }
 
-  
-
-.comment-item {
-  color: white;
+.launch-list__name {
+    color: #ffffff; /* Bright blue for titles, reminiscent of SpaceX branding */
+    margin: 0;
+    font-size: 1.2em; /* Slightly larger font for better readability */
 }
 
-/*LAUNCH LIST CSS -------------------------------------------*/
-
-.launchListScreen {
-  /* Add any additional styles for the launchListScreen container if needed */
-  width: 100%;
-}
-
-.listImagesGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px; /* Adjust the gap between items as needed */
-  justify-content: space-around; /* Center the items horizontally */
-}
-
-.launch-item {
-  position: relative;
-  background-color: rgba(173, 216, 230, 0.274);
-  border-radius: 8%;
-
-}
-
-.square-div {
-  /* Add styles for the square-div if needed */
-  text-align: center;
-}
-
-.listImages {
-  max-width: 100%; /* Limit the image width to its container */
-  max-height: 150px; /* Set a maximum height for the images */
-  width: auto;
-  height: auto;
-  border-radius: 8px; /* Add border-radius for rounded corners if desired */
-  display: block;
-  margin: 0 auto; /* Center the image horizontally */
-  margin-top: 70px;
-}
-
-.launch-item:hover{
-  transform: scale(1.05);
-}
-
-/*Rocket List CSS------ */
-
-
-/* Add this CSS to your existing styles or create a new stylesheet */
-
-.rocket-list-screen {
-  padding: 0px;
-  width: 100%;
-}
-
-.rocket-list-image-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  flex-wrap: wrap;
-  gap: 20px;
- 
-
-}
-
-.rocket-list-images {
-  width: 100%;
-}
-
-.rocket-square-div{
-
+/* Responsive Design */
+@media (max-width: 768px) {
+    .launch-list__grid {
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+    }
 }
 
 
 
 
-/* Add this CSS to your existing styles or create a new stylesheet */
+
+
+
+/* _______________________________________________ */
+/* Base Styles */
+.launch-details {
+    background-color: #1C2331;
+    color: #c5c6c7; /* Light grey text */
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Header Styles */
+.launch-details__header h2 {
+    color: #000000; /* Bright blue for titles */
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 10px;
+    margin-left: 25%;
+    margin-right: 25%;
+    border-radius: 10px;
+    background-color: white;
+}
+
+/* Content Styles */
+.launch-details__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Space between items */
+}
+.launch-details-content-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+.launch-details__image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Button Styles */
+.button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    color: #0b0c10;
+    background-color: #f3f3f3; /* Dark teal */
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #66fcf1; /* Lighter blue */
+}
+
+/* Specific Button Styles */
+.button--news, .button--video {
+    margin-top: 10px;
+}
+
+/* Comments Section */
+.launch-details__comments {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Link Styles */
+.launch-details__link {
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .launch-details__content {
+        flex-direction: column;
+    }
+}
+
+  /* _________________________________ */
+
+  .rockets-launch-list__screen {
+    background-color: #1C2331; /* Dark navy blue for space theme */
+    padding: 20px;
+    min-height: 100vh; /* Ensures the background covers the full viewport height */
+    font-family: 'Roboto', sans-serif; /* Modern, readable font */
+}
+
+.rockets-launch-list__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.rocket-item {
+    background-color: #262F3D; /* Dark grey for each item */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+}
+
+.rocket-item:hover {
+    transform: translateY(-10px);
+}
+
+.rocket-item__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.rocket-item__name {
+    margin: 10px 0;
+    color: #FFFFFF;
+    font-size: 1.2em;
+    padding: 5px;
+}
+
+@media (max-width: 768px) {
+    .rockets-launch-list__grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .rocket-item__name {
+        font-size: 1em;
+    }
+}
+
+
+
+/* ___________________________________________ */
+
+/* Base Styles for Rocket Details */
+.rocket-details {
+    background-color: #1C2331;
+    color: #c5c6c7; /* Light grey for text */
+    font-family: 'Arial', sans-serif; /* Clean, modern font */
+    padding: 20px;
+    max-width: 800px; /* Constraint for readability */
+    margin: 0 auto; /* Centering the container */
+}
+
+/* Header Styles */
+.rocket-details__header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.rocket-details__name {
+    color: #ffffff; /* Bright blue for titles, reminiscent of SpaceX branding */
+    font-size: 2em;
+    margin: 0;
+}
+
+/* Content Styles */
+.rocket-details__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centering content */
+}
+
+.rocket-details__image-wrapper {
+    margin-bottom: 20px;
+}
+
+.rocket-details__image {
+    max-width: 100%;
+    border-radius: 10px; /* Soft rounded corners for the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Subtle shadow for depth */
+}
+
+/* Description Styles */
+.rocket-details__description {
+    background-color: #1f2833; /* Slightly lighter black for contrast */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    text-align: justify;
+}
+
+.rocket-details__description-title {
+    color: #45a29e; /* Soft green-blue */
+    font-weight: bold;
+}
+
+.rocket-details__description-text {
+    color: #c5c6c7;
+}
+
+/* Read More Section */
+.rocket-details__read-more {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.rocket-details__wikipedia-link {
+    color: #66fcf1;
+    text-decoration: none;
+}
+
+.rocket-details__wikipedia-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .rocket-details {
+        padding: 15px;
+    }
+
+    .rocket-details__content {
+        flex-direction: column;
+    }
+}
+
+/* ____________________________________ */
 
 .crew-list-screen {
-  padding: 20px;
-  background-color: black;
- 
-  background-size: 100% 100%;
-  
+    background-color: #1C2331; /* Dark navy blue for space theme */
+    padding: 20px;
+    font-family: 'Roboto', sans-serif; /* Modern, readable font */
 }
 
 .crew-images-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid layout */
+    gap: 20px;
+    padding: 20px;
 }
 
 .crew-square-div {
-  
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out;
+    background-color: #262F3D; /* Dark grey for each item */
+    border-radius: 10px;
+    overflow: hidden; /* Ensures the image fits in the container */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    transition: transform 0.3s ease-in-out;
+    text-align: center; /* Center the text */
 }
 
 .crew-square-div:hover {
-  transform: scale(1.05);
-}
-
-.crew-square-div h2 {
-  font-size: 1.2em;
-  margin-bottom: 10px;
-  color: white;
+    transform: translateY(-10px); /* Slight lift effect on hover */
 }
 
 .crew-list-images {
-  width: 100%;
-  border-radius: 6px;
-  
+    width: 100%; /* Ensures image takes full width of container */
+    height: 200px; /* Uniform height for all images */
+    object-fit: cover; /* Ensures images cover the area nicely */
+    border-bottom: 3px solid #4BA3C3; /* Bright blue border for images */
+    object-position: top; /* Aligns the top of the image with the container's top */
 }
 
-/* Add more styles as needed based on your preferences */
+.crew-square-div h2 {
+    margin: 10px 0;
+    color: #FFFFFF; /* White text for contrast */
+    font-size: 1.2em;
+}
 
-/*-------- LAUNCH DETAILS CSS ----------*/
-.launch-details-screen {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-  background-image: url('./assets/space-wallpaper.jpg');
-  background-size: 100% 100%; /* Adjust to your preference */
-  background-repeat: no-repeat; /* Adjust to your preference */
-  background-attachment: fixed; /* Optional: Fixed background */
-  background-position: center; /* Adjust to your preference */
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .crew-images-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust for small screens */
+    }
+
+    .crew-square-div h2 {
+        font-size: 1em;
+    }
 }
-.launch-details-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start ;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-}
-.launch-details-header {
-  margin-left: 80px;
-}
-.launch-details-content {
-  display: flex;
-  flex-direction:row;
-  align-items: center;
-}
-.launch-details-image {
-  max-width: 100%; /* Ensure the image doesn't exceed its container */
-  height: auto;
-}
-.launch-details-news {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: large;
-}
-.launch-details-video {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-}
-/* -------- COMMENT CSS ---------- */
-.comment-container {
-    max-width: 600px;
-    margin: 20px auto;
+
+/* ________________________________ */
+
+.crew-details {
+    background-color: #1C2331; /* Dark navy blue for space theme */
+    color: #EFEFEF; /* Light grey for text */
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #080808;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: white;
+    font-family: 'Roboto', sans-serif; /* Modern, readable font */
+    border-radius: 10px;
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.3);
+    margin: 20px auto;
+    max-width: 600px; /* Set a max-width for better readability */
 }
-.comment-item {
-  color: white;
+
+.crew-details__name {
+    color: #fcfcfc; /* Bright blue for name */
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
 }
-.comment-author {
-  margin-top: 5%;
-  margin-top: 5%;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+
+.crew-details__image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
 }
-.comment-description {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+
+.crew-details__agency, .crew-details__status {
+    background-color: #262F3D; /* Dark grey for info sections */
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
 }
-.comment-button {
-  margin-left: 200px;
-  flex-shrink: 0;
+
+
+
+.crew-details__launches-link {
+    display: inline-block;
+    background-color: #FFC107; /* Amber for link */
+    color: #1C2331;
+    padding: 10px 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
 }
+
+.crew-details__launches-link:hover {
+    background-color: #FFD54F; /* Lighter amber on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .crew-details {
+        padding: 15px;
+    }
+
+    .crew-details__name {
+        font-size: 1.5em;
+    }
+}
+
+/* _______________FORM __________ */
+
+.add-comment {
+    color: #fff;
+    background-color: rgb(0, 0, 0); /* Dark blue background */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: auto;
+    border: 2px solid white;
+  }
+  
+  .add-comment__form {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    justify-content: center;
+    margin-left: 130px;
+  }
+  
+  .add-comment__field {
+    display: flex;
+    align-items: center;
+
+  }
+  
+  .add-comment__label {
+    margin-right: 10px;
+    color: #fff;
+  }
+  
+  .add-comment__input {
+    flex-grow: 1;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+  }
+  
+  .add-comment__submit-btn, .add-comment__cancel-btn {
+    background-color: #e0e0e0; /* Light gray for contrast */
+    color: #333;
+    border: none;
+    
+    margin-right: 30%;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-comment__submit-btn:hover, .add-comment__cancel-btn:hover {
+    background-color: #c0c0c0;
+  }
+  
+  .add-comment__comments-section {
+    margin-top: 20px;
+  }
+  
+  .add-comment__comments-title {
+    margin-bottom: 15px;
+  }
+  
+  .add-comment__comments-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .add-comment__comment-item {
+    background-color: #262F3D; /* Slightly lighter blue */
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .add-comment__edit-btn, .add-comment__delete-btn {
+    background-color: #6171ff; /* Contrast color */
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .add-comment__edit-btn:hover, .add-comment__delete-btn:hover {
+    background-color: #696b09
+  }
+  
