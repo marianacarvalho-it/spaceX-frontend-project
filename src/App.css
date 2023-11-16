@@ -9,7 +9,7 @@ body {
 
 /* home page */
 .home-page-screen {
-    background-image: url('src/assets/shot-by-cerqueira-KRqiZC9iFt8-unsplash.jpg');
+    background-image: url('./assets/shot-by-cerqueira-KRqiZC9iFt8-unsplash.jpg');
     background-size: cover;
     display: flex;
     flex-direction: column;
