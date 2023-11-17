@@ -448,7 +448,7 @@ body {
     font-family: 'Roboto', sans-serif; /* Modern, readable font */
     border-radius: 10px;
     box-shadow: 0 10px 20px 0 rgba(0,0,0,0.3);
-    margin: 20px auto;
+    margin: 0px auto;
     max-width: 600px; /* Set a max-width for better readability */
 }
 
@@ -474,8 +474,6 @@ body {
     margin: 10px 0;
     border-radius: 5px;
 }
-
-
 
 .crew-details__launches-link {
     display: inline-block;
