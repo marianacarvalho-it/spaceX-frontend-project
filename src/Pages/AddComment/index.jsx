@@ -112,7 +112,7 @@ function AddComment({launchId}) {
         <ul className="add-comment__comments-list">
           {comments.filter(comment => comment.rocketId === launchId).map((c) => (
             <li key={c.id} className="add-comment__comment-item">
-              <strong>Author: {c.author}:</strong> Description: {c.description}
+              <strong>Author: </strong>{c.author}<strong> Description: </strong>{c.description}
               <button className="add-comment__edit-btn" onClick={() => handleEdit(c.id)}>Edit</button>
               <button className="add-comment__delete-btn" onClick={() => handleDelete(c.id)}>Delete</button>
             </li>
