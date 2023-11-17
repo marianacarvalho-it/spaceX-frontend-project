@@ -9,7 +9,7 @@ function AddComment({launchId}) {
   const [editCommentId, setEditCommentId] = useState(null);
 
   useEffect(() => {
-    axios.get("https://spacex-backend-project.onrender.com")
+    axios.get("https://spacex-backend-project.onrender.com/comments")
       .then(response => {
         setComments(response.data);
       })
