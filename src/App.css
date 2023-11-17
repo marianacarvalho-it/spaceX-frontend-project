@@ -123,6 +123,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Reduced max size */
     gap: 20px; /* Space between items */
+    margin-top: 50px;
 }
 
 /* Individual Launch Item Styles */
@@ -183,6 +184,7 @@ body {
     padding: 10px;
     margin-left: 25%;
     margin-right: 25%;
+    margin-top: 50px;
     border-radius: 10px;
     background-color: white;
 }
@@ -395,6 +397,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid layout */
     gap: 20px;
     padding: 20px;
+    margin-top: 50px;
 }
 
 .crew-square-div {
@@ -453,6 +456,7 @@ body {
     text-align: center;
     font-size: 2em;
     margin-bottom: 20px;
+    margin-top: 50px;
 }
 
 .crew-details__image img {
@@ -505,7 +509,7 @@ body {
     background-color: rgb(0, 0, 0); /* Dark blue background */
     padding: 20px;
     border-radius: 10px;
-    max-width: 600px;
+    max-width: 850px;
     margin: auto;
     border: 2px solid white;
 }
