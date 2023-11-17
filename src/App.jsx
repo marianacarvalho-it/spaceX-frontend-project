@@ -5,18 +5,13 @@ import HomePage from './Pages/HomePage';
 import LaunchList from './Pages/LaunchList';
 import RocketsLaunchList from './Pages/RocketsList';
 import RocketDetails from './Pages/RocketDetails';
-
 import LaunchDetails from './Pages/LaunchDetails';
 import NavBar from './Pages/Navbar';
-import SattelitesLaunchList from './Pages/LaunchList';
-import CapsulesLaunchList from './Pages/RocketsList';
 import CrewList from './Pages/CrewList';
 import CrewDetails from './Pages/CrewDetails';
 
-
 function App() {
   
-
   return (
     <div>
       <NavBar />
@@ -31,11 +26,8 @@ function App() {
         <Route path="/crew" element={<CrewList/>}/>
         <Route path="/crew/:crewId" element={<CrewDetails/>}/>
         
-        
-      </Routes>
-        
+        </Routes>        
     </div>
   )
 }
-
 export default App

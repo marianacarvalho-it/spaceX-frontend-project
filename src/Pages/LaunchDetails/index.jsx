@@ -42,12 +42,11 @@ function LaunchDetails() {
                     </a>
                 )}
             </div>
-           
+        
             <div className="launch-details__comments">
                 <AddComment launchId={launchDetails.id} />
             </div>
         </div>
     );
 }
-
 export default LaunchDetails;

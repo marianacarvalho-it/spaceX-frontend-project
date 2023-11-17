@@ -17,45 +17,50 @@ body {
     justify-content: center;
     height: 100vh; /* This ensures the content is centered vertically */
     color: white; /* Set your desired text color */
-  }
-  .home-page-screen h1 {
+}
+
+.home-page-screen h1 {
     font-size: 100px; /* Adjust the font size as needed */
     padding: 50px;
     text-shadow: 0px 0px 28px rgb(255, 255, 255);
-  }
-  .second-homepage h2 {
+}
+
+.second-homepage h2 {
     font-size: 40px; /* Adjust the font size as needed */
-  }
-  .second-homepage {
+}
+
+.second-homepage {
     height: 300px;
     display: flex;
     flex-direction: row;
     height: 300px;
     padding-bottom: 50px;
     color: white;
-  }
-  .left-page {
-  display: flex;
-  flex-direction: column;
-  padding-left: 50px;
-  padding-right: 50px;
-  align-items: center;
-  justify-content: center;
-  }
-  .right-page {
+}
+
+.left-page {
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+    padding-right: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-page {
     background: url("./assets/launch.jpg");
     width: 50%;
     background-size: cover;
-  }
-  .left-page h3 {
+}
+
+.left-page h3 {
     margin-left: 100px;
     margin-right: 100px;
-  }
-  .left-page h2 {
-    border-bottom: 5px solid rgb(255, 255, 255);
-  }
-  
+}
 
+.left-page h2 {
+    border-bottom: 5px solid rgb(255, 255, 255);
+}
 
 .navBar {
     display: flex;
@@ -67,10 +72,6 @@ body {
     position: fixed;
     width: 100%;
     z-index: 10;
-
-    
-    
-
 }
 
 .navBarItem {
@@ -163,12 +164,6 @@ body {
     }
 }
 
-
-
-
-
-
-
 /* _______________________________________________ */
 /* Base Styles */
 .launch-details {
@@ -252,7 +247,7 @@ body {
 
   /* _________________________________ */
 
-  .rockets-launch-list__screen {
+.rockets-launch-list__screen {
     background-color: #1C2331; /* Dark navy blue for space theme */
     padding: 20px;
     min-height: 100vh; /* Ensures the background covers the full viewport height */
@@ -301,8 +296,6 @@ body {
         font-size: 1em;
     }
 }
-
-
 
 /* ___________________________________________ */
 
@@ -515,37 +508,36 @@ body {
     max-width: 600px;
     margin: auto;
     border: 2px solid white;
-  }
-  
-  .add-comment__form {
+}
+
+.add-comment__form {
     display: flex;
     flex-direction: row;
     gap: 10px;
 
     justify-content: center;
     margin-left: 130px;
-  }
-  
-  .add-comment__field {
+}
+
+.add-comment__field {
     display: flex;
     align-items: center;
+}
 
-  }
-  
-  .add-comment__label {
+.add-comment__label {
     margin-right: 10px;
     color: #fff;
-  }
-  
-  .add-comment__input {
+}
+
+.add-comment__input {
     flex-grow: 1;
     padding: 8px;
     border-radius: 5px;
     border: none;
     outline: none;
-  }
-  
-  .add-comment__submit-btn, .add-comment__cancel-btn {
+}
+
+.add-comment__submit-btn, .add-comment__cancel-btn {
     background-color: #e0e0e0; /* Light gray for contrast */
     color: #333;
     border: none;
@@ -555,33 +547,33 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  .add-comment__submit-btn:hover, .add-comment__cancel-btn:hover {
+}
+
+.add-comment__submit-btn:hover, .add-comment__cancel-btn:hover {
     background-color: #c0c0c0;
-  }
-  
-  .add-comment__comments-section {
+}
+
+.add-comment__comments-section {
     margin-top: 20px;
-  }
-  
-  .add-comment__comments-title {
+}
+
+.add-comment__comments-title {
     margin-bottom: 15px;
-  }
-  
-  .add-comment__comments-list {
+}
+
+.add-comment__comments-list {
     list-style: none;
     padding: 0;
-  }
-  
-  .add-comment__comment-item {
+}
+
+.add-comment__comment-item {
     background-color: #262F3D; /* Slightly lighter blue */
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 10px;
-  }
-  
-  .add-comment__edit-btn, .add-comment__delete-btn {
+}
+
+.add-comment__edit-btn, .add-comment__delete-btn {
     background-color: #6171ff; /* Contrast color */
     color: #fff;
     border: none;
@@ -589,9 +581,8 @@ body {
     border-radius: 5px;
     cursor: pointer;
     margin-left: 10px;
-  }
-  
-  .add-comment__edit-btn:hover, .add-comment__delete-btn:hover {
+}
+
+.add-comment__edit-btn:hover, .add-comment__delete-btn:hover {
     background-color: #696b09
-  }
-  
+}  

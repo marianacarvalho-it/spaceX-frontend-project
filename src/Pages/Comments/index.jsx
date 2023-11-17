@@ -14,7 +14,7 @@ function Comments({launchId}) {
         setComments(response.data);
       })
       .catch(error => console.error("Error fetching comments:", error));
-  }, []);
+    }, []);
 
   async function handleSubmit(e) {
     e.preventDefault();

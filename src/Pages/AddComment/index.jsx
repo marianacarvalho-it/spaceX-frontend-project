@@ -1,22 +1,26 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+
 function AddComment({launchId}) {
+
   const [comments, setComments] = useState([]);
   const [comment, setComment] = useState("");
   const [author, setAuthor] = useState("");
   const [editCommentId, setEditCommentId] = useState(null);
+
   useEffect(() => {
-    axios.get("http://localhost:5005/comments")
+    axios.get("https://spacex-backend-project.onrender.com")
       .then(response => {
         setComments(response.data);
       })
       .catch(error => console.error("Error fetching comments:", error));
   }, []);
+
   async function handleSubmit(e) {
     e.preventDefault();
     try {
       if (editCommentId) {
-        await axios.put(`http://localhost:5005/comments/${editCommentId}`, {
+        await axios.put(`https://spacex-backend-project.onrender.com/comments/${editCommentId}`, {
           author: author,
           description: comment,
           rocketId: launchId,
@@ -24,7 +28,7 @@ function AddComment({launchId}) {
         setEditCommentId(null);
       }
       else {
-        const response = await axios.post("http://localhost:5005/comments", {
+        const response = await axios.post("https://spacex-backend-project.onrender.com/comments", {
           author: author,
           description: comment,
           rocketId: launchId,
@@ -34,31 +38,35 @@ function AddComment({launchId}) {
       }
       setComment("");
       setAuthor("");
-      const updatedComments = await axios.get("http://localhost:5005/comments");
+      const updatedComments = await axios.get("https://spacex-backend-project.onrender.com/comments");
       setComments(updatedComments.data);
       } catch (error) {
       console.error("Error adding/updating comment: ", error);
     }
   }
+
   const handleEdit = (commentId) => {
     setEditCommentId(commentId);
     const commentToEdit = comments.find((c) => c.id === commentId);
     setAuthor(commentToEdit.author);
     setComment(commentToEdit.description);
   };
+
   const handleCancelEdit = () => {
     setComment("");
     setAuthor("");
     setEditCommentId(null);
   };
+
   const handleDelete = async (commentId) => {
     try {
-      await axios.delete(`http://localhost:5005/comments/${commentId}`);
+      await axios.delete(`https://spacex-backend-project.onrender.com/comments/${commentId}`);
       setComments((prevComments) => prevComments.filter((c) => c.id !== commentId));
     } catch (error) {
       console.error("Error deleting comment:", error);
     }
   };
+
   return (
     <div className="add-comment">
       <form className="add-comment__form" onSubmit={handleSubmit}>
@@ -114,5 +122,4 @@ function AddComment({launchId}) {
     </div>
   );
 }
-
 export default AddComment;

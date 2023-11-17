@@ -33,5 +33,4 @@ function CrewDetails() {
         </div>
     );
 }
-
 export default CrewDetails;
